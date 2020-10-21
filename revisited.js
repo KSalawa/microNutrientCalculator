@@ -1,10 +1,11 @@
 class ingredient {
-    constructor(name, kcal, fat, carb, protein) {
+    constructor(name, kcal, fat, carb, protein, calories) {
         this._name = name;
         this._kcal = kcal;
         this._fat = fat;
         this._carb = carb;
-        this._protein = protein
+        this._protein = protein;
+        this._calories = calories;
     }
     get name(){
         return this._name;
@@ -21,22 +22,30 @@ class ingredient {
     get protein(){
         return this._protein;
     }
-
-    calculateCalories(weight) {
-        return this._kcal * (weight / 100);
+    get calories(){
+        return this._calories;
     }
-    
+/*
+    calculateCalories(weight) {
+        return this._calories = (this._kcal * (weight / 100));
+    }
+*/
     calculateCaloriesfromFat(weight) {
-        return Math.floor(this._fat * (weight * 0.09));
+        return this._calories = (this._calories + (Math.floor(this._fat * (weight * 0.09))));
     }
     calculateCaloriesfromCarb(weight) {
-        return Math.floor(this._carb * (weight * 0.04));
+        return this._calories = (this._calories + (Math.floor(this._carb * (weight * 0.04))));
     }
     calculateCaloriesfromProtein(weight) {
-        return Math.floor(this._protein * (weight * 0.04));
+        return this._calories = (this._calories + (Math.floor(this._protein * (weight * 0.04))));
     }
+/*    
+    totalCalories(calories){
+        this._calories.push(calories);
+    }
+ */   
 }
-
+//ingredients below
 const olives = new ingredient('Olives', 162, 17, 0, 1);
 const pesto = new ingredient('Pesto', 312, 27.3, 10.6, 4.8);
 const feta = new ingredient('Peta', 303, 26.1, 0.7, 16.2);
@@ -44,7 +53,8 @@ const cream = new ingredient('Cream', 467, 50.5, 1.6, 1.5);
 const butter = new ingredient('Butter', 745, 82, 0.6, 0.6);
 const chicken = new ingredient('Chicken', 196, 10.9, 0, 24.4);
 
-
+//logs total calories from 100g of olives
+//console.log(olives.calculateCaloriesfromCarb(100)+ olives.calculateCaloriesfromFat(100)+ olives.calculateCaloriesfromProtein(100));
 
 /*
 300g Olives 
