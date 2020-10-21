@@ -31,13 +31,13 @@ class ingredient {
     }
 */
     calculateCaloriesfromFat(weight) {
-        return this._calories = (this._calories + (Math.floor(this._fat * (weight * 0.09))));
+        return (Math.floor(this.fat * (weight * 0.09)));
     }
     calculateCaloriesfromCarb(weight) {
-        return this._calories = (this._calories + (Math.floor(this._carb * (weight * 0.04))));
+        return (Math.floor(this.carb * (weight * 0.04)));
     }
     calculateCaloriesfromProtein(weight) {
-        return this._calories = (this._calories + (Math.floor(this._protein * (weight * 0.04))));
+        return (Math.floor(this.protein * (weight * 0.04)));
     }
 /*    
     totalCalories(calories){
@@ -66,3 +66,6 @@ const chicken = new ingredient('Chicken', 196, 10.9, 0, 24.4);
 */
 
 
+console.log(olives.calculateCaloriesfromFat(300));
+console.log(olives.calculateCaloriesfromCarb(300));
+console.log(olives.calculateCaloriesfromProtein(300));
